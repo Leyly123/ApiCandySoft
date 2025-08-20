@@ -105,6 +105,8 @@ pip install -r requirements.txt
 # 6. Importar base de datos con el archivo SQL
 
 # Primero, crear la base de datos vacía en MySQL (si no existe):
+# - Abre MySQL
+# - Ejecuta este comando
 CREATE DATABASE CandySoftApi2;
 
 # Luego, importar el archivo db_candysoft.sql en la base de datos:
