@@ -56,18 +56,35 @@ git clone https://github.com/Leyly123/ApiCandySoft.git
 cd ApiCandySoft
 
 
-# 2. Editar archivo .env
+# 2. Crear archivo .env
+# - Crealo dentro de la carpeta apiCandySoft, se debe llamar asi .env
+# - Copia y pega el siguiente código
 # - En la línea 9 cambia la contraseña de MySQL (DB_PASSWORD) por la que tengas configurada en tu máquina.
 # - Si tu usuario no tiene contraseña, deja el valor vacío.
 # - En la línea 11 revisa el puerto de conexión a MySQL (DB_PORT).
 #   El proyecto está configurado en 3307, si tu MySQL corre en 3306 cámbialo.
 
+SECRET_KEY='django-insecure-$=ae#$xpmjkw=7v&&0kv@$a)j+o9ti%u%z+tygd#3nzju=pajc'
+DEBUG=True
+
+#base de datos - solo cambia esto
+
 DB_ENGINE=django.db.backends.mysql
 DB_NAME='CandySoftApi2'
 DB_USER=root
-DB_PASSWORD='tu_contraseña'
+DB_PASSWORD='tu-contraseña*'
 DB_HOST=127.0.0.1
 DB_PORT=3307
+
+
+#tema de correo - esto dejarlo igual
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'candysoftpruebaapi@gmail.com'
+EMAIL_HOST_PASSWORD = 'ikyp huvb lnia zekw'
+
+IMGBB_API_KEY = "fec1ba28d181c77a5801a0952fead016"
 
 
 # 3. Crear entorno virtual
@@ -87,7 +104,7 @@ CREATE DATABASE CandySoftApi2;
 
 # Luego, importar el archivo db_candysoft.sql en la base de datos:
 # ⚠️ Nota: en la parte -p --port=3307, el proyecto está configurado en 3307, si tu MySQL corre en 3306 cámbialo.
-& "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p --port=3307 CandySoftApi2 < db_candysoft.sql
+Get-Content db_candysoft.sql | & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p --port=3307 CandySoftApi2
 
 
 # 7. Ingresar a la carpeta principal donde está manage.py
