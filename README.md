@@ -64,6 +64,8 @@ cd ApiCandySoft
 # - En la línea 11 revisa el puerto de conexión a MySQL (DB_PORT).
 #   El proyecto está configurado en 3307, si tu MySQL corre en 3306 cámbialo.
 
+# Este es el código que debes copiar y pegar en el archivo .env
+
 SECRET_KEY='django-insecure-$=ae#$xpmjkw=7v&&0kv@$a)j+o9ti%u%z+tygd#3nzju=pajc'
 DEBUG=True
 
@@ -86,6 +88,9 @@ EMAIL_HOST_PASSWORD = 'ikyp huvb lnia zekw'
 
 IMGBB_API_KEY = "fec1ba28d181c77a5801a0952fead016"
 
+# Hasta aqui el código que debes de copiar y pegar.
+
+# Abre la terminal (PowerShell) y ejecuta los siguientes comandos en este orden
 
 # 3. Crear entorno virtual
 python -m venv venv
