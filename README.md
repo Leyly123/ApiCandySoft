@@ -106,18 +106,21 @@ pip install -r requirements.txt
 
 # Primero, crear la base de datos vacía en MySQL (si no existe):
 # - Abre MySQL
-# - Ejecuta este comando
+# - Ejecuta este comando (SQL)
 CREATE DATABASE CandySoftApi2;
 
 # Luego, importar el archivo db_candysoft.sql en la base de datos:
+# Despues de crear la base de datos, vuelve a la terminal del proyecto (PowerShell) la misma con la que venias ejecutando
 # ⚠️ Nota: en la parte -p --port=3307, el proyecto está configurado en 3307, si tu MySQL corre en 3306 cámbialo.
+# Ejecuta el comando
+# Te pedira la contraseña de tu MySQL (si tiene)
 Get-Content db_candysoft.sql | & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p --port=3307 CandySoftApi2
 
 
 # 7. Ingresar a la carpeta principal donde está manage.py
 cd apiCandySoft
 
-# 8. (OPCIONAL) Migrar base de datos con Django
+# 8. (OPCIONAL - SOLO SI EL SQL NO DIO) Migrar base de datos con Django
 # ⚠️ Solo usa este comando si no funcionó la importación con el archivo SQL.
 python manage.py migrate
 
