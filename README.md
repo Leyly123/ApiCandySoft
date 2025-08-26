@@ -1,4 +1,10 @@
-# 🍬 API Candy Soft - Proyecto Modularizado
+# 📊 Estado del build (badge)
+
+![Django Tests](https://github.com/Leyly123/ApiCandySoft/actions/workflows/django-tests.yml/badge.svg)
+
+---
+
+# 🍬 API Candy Soft - Proyecto Modularizado (Trabajo de prueba)
 
 Este proyecto corresponde a una **API REST en Django** para la gestión de un sistema modularizado.  
 A continuación encontrarás los pasos exactos para clonar, configurar, instalar dependencias, importar/migrar la base de datos, correr pruebas y levantar el servidor.  
@@ -141,3 +147,59 @@ python manage.py test usuario.tests.test_cliente
 
 # 10. Levantar servidor de desarrollo
 python manage.py runserver
+
+```
+---
+
+# ✅ Automatización de pruebas con GitHub Actions (Trabajo implantación)
+
+Este proyecto cuenta con un flujo de integración continua (CI) configurado con GitHub Actions.
+Cada vez que haces un push o un pull request hacia la rama main, se ejecutan automáticamente las pruebas unitarias del proyecto.
+
+---
+
+## 📂 Ubicación del workflow
+
+El flujo se encuentra en el archivo:
+
+```bash
+
+.github/workflows/django-tests.yml
+
+```
+
+---
+
+## 🔧 ¿Qué hace el workflow?
+
+- 1. Configura un entorno en Ubuntu.
+
+- 2. Levanta un servicio de MySQL 8.0.
+
+- 3. Instala Python 3.10.
+
+- 4. Instala las dependencias (requirements.txt).
+
+- 5. Configura las variables de entorno de Django (similares al .env).
+
+- 6. Ejecuta las migraciones (python manage.py migrate).
+
+- 7. Corre todas las pruebas (python manage.py test).
+
+---
+
+## 🚀 Resultado
+
+- Si las pruebas pasan ✅, GitHub marca el commit o PR como exitoso.
+
+- Si alguna prueba falla ❌, el flujo se detiene y verás el error en la pestaña Actions de GitHub.
+
+**📌 Nota importante**
+
+- En GitHub Actions, la base de datos se crea con migrate (sin usar el archivo db_candysoft.sql).
+
+- En tu PC local, puedes usar db_candysoft.sql para cargar datos de ejemplo más rápido.
+
+---
+
+👉 [Ver ejecuciones en GitHub Actions](https://github.com/Leyly123/ApiCandySoft/actions)
