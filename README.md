@@ -2,6 +2,18 @@
 
 ![Django Tests](https://github.com/Leyly123/ApiCandySoft/actions/workflows/django-tests.yml/badge.svg)
 
+**⚠️ Esto es una imagen dinámica que GitHub genera automáticamente.**
+
+##### 📌Muestra el estado de tu workflow (django-tests.yml).
+
+- Tiene tres estados posibles:
+
+ - ✅ verde → las pruebas pasaron.
+
+ - ❌ rojo → alguna prueba falló.
+
+ - 🔄 amarillo → está en ejecución.
+
 ---
 
 # 🍬 API Candy Soft - Proyecto Modularizado (Trabajo de prueba)
