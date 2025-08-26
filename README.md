@@ -1,10 +1,12 @@
-# 📊 Estado del build (badge) (Se agrega por trabajo de implantación)
+# 📊 Estado del build (badge) 
+
+### (Se agrega por trabajo de implantación - automatización con Github actions) 
 
 ![Django Tests](https://github.com/Leyly123/ApiCandySoft/actions/workflows/django-tests.yml/badge.svg)
 
 **⚠️ Lo anterior es una imagen dinámica que GitHub genera automáticamente.**
 
-##### 📌Muestra el estado de tu workflow (django-tests.yml).
+#### 📌Muestra el estado de tu workflow (django-tests.yml).
 
 - Tiene tres estados posibles:
 
@@ -215,3 +217,12 @@ El flujo se encuentra en el archivo:
 ---
 
 👉 [Ver ejecuciones en GitHub Actions](https://github.com/Leyly123/ApiCandySoft/actions)
+
+**📌 Nota importante**
+
+Ese enlace anterior lleva directamente a la pestaña Actions de tu repo en GitHub, donde se listan todas las ejecuciones del workflow django-tests.yml.
+Ahí se pueden ver:
+
+- Ver todas las ejecuciones pasadas del flujo `django-tests.yml`.
+- Revisar si un commit pasó o falló las pruebas.
+- Consultar los logs detallados de cada paso del workflow.
