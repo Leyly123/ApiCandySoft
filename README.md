@@ -2,7 +2,7 @@
 
 ### (Se agrega por trabajo de implantación - automatización con Github actions) 
 
-![Ejecución de pruebas en Actions](docs/img/actions-success.png)
+![Django Tests](https://github.com/Leyly123/ApiCandySoft/actions/workflows/django-tests.yml/badge.svg)
 
 **⚠️ Lo anterior es una imagen dinámica que GitHub genera automáticamente.**
 
