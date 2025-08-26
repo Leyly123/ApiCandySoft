@@ -172,19 +172,19 @@ El flujo se encuentra en el archivo:
 
 ## 🔧 ¿Qué hace el workflow?
 
-- 1. Configura un entorno en Ubuntu.
+- Configura un entorno en Ubuntu.
 
-- 2. Levanta un servicio de MySQL 8.0.
+- Levanta un servicio de MySQL 8.0.
 
-- 3. Instala Python 3.10.
+- Instala Python 3.10.
 
-- 4. Instala las dependencias (requirements.txt).
+- Instala las dependencias (requirements.txt).
 
-- 5. Configura las variables de entorno de Django (similares al .env).
+- Configura las variables de entorno de Django (similares al .env).
 
-- 6. Ejecuta las migraciones (python manage.py migrate).
+- Ejecuta las migraciones (python manage.py migrate).
 
-- 7. Corre todas las pruebas (python manage.py test).
+- Corre todas las pruebas (python manage.py test).
 
 ---
 
