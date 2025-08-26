@@ -220,8 +220,7 @@ El flujo se encuentra en el archivo:
 
 **📌 Nota importante**
 
-Ese enlace anterior lleva directamente a la pestaña Actions de tu repo en GitHub, donde se listan todas las ejecuciones del workflow django-tests.yml.
-Ahí se pueden ver:
+Ese enlace abre la pestaña **Actions** del repositorio, donde podrás ver:
 
 - Ver todas las ejecuciones pasadas del flujo `django-tests.yml`.
 - Revisar si un commit pasó o falló las pruebas.
