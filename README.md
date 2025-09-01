@@ -223,19 +223,21 @@ El flujo se encuentra en el archivo:
 
 ## 🔧 ¿Qué hace el workflow?
 
-- Configura un entorno en Ubuntu.
+Configura un entorno en Ubuntu.
 
-- Levanta un servicio de MySQL 8.0.
+Levanta un servicio de PostgreSQL 14 (antes era MySQL 8.0, ya se actualizó).
 
-- Instala Python 3.10.
+Instala Python 3.10.
 
-- Instala las dependencias (requirements.txt).
+Instala las dependencias desde requirements.txt.
 
-- Configura las variables de entorno de Django (similares al .env).
+Configura las variables de entorno de Django (simulando lo que está en el .env).
 
-- Ejecuta las migraciones (python manage.py migrate).
+Usa la variable DATABASE_URL para conectarse a la base de datos de pruebas en PostgreSQL.
 
-- Corre todas las pruebas (python manage.py test).
+Ejecuta las migraciones con python manage.py migrate.
+
+Corre todas las pruebas unitarias con python manage.py test.
 
 ---
 
