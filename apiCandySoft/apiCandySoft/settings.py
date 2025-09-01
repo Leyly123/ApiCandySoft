@@ -117,13 +117,24 @@ DATABASES = {
 } """
 
 #base de datos 
-DATABASES = {
-    "default": dj_database_url.parse(
-        os.getenv("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True
-    )
-}
+db_url = os.getenv("DATABASE_URL")
+
+if db_url and "sslmode=disable" in db_url:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            db_url,
+            conn_max_age=600,
+            ssl_require=False
+        )
+    }
+else:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            db_url,
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
 
 #parte de los emails o SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
