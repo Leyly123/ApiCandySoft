@@ -43,7 +43,8 @@ jobs:
         run: |
           echo "SECRET_KEY=django-insecure-ci-key" >> $GITHUB_ENV
           echo "DEBUG=False" >> $GITHUB_ENV
-          echo "DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/test_db" >> $GITHUB_ENV
+          echo "DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/test_db?sslmode=disable" >> $GITHUB_ENV
+
 
       - name: Run migrations
         run: python apiCandySoft/manage.py migrate
