@@ -110,6 +110,43 @@ IMGBB_API_KEY = "fec1ba28d181c77a5801a0952fead016"
 
 # Hasta aqui el código que debes de copiar y pegar.
 
+# 2.1. En el archivo settings.py de la carpeta apiCandySoft, entre las líneas 118 y 128 se encuentra la configuración de la base de datos dentro del diccionario DATABASES.
+
+# Actualmente, el bloque de código luce así:
+
+DATABASES = {
+    'default':{
+        'ENGINE': os.getenv("DB_ENGINE"),
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
+    }
+} 
+
+# A esta configuración se le debe agregar la sección OPTIONS para especificar el uso del conjunto de caracteres utf8mb4, que permite un manejo más completo de caracteres especiales y emojis en la base de datos.
+
+'OPTIONS': {
+    'charset' : 'utf8mb4',
+}
+
+# El bloque de configuración actualizado quedaría de la siguiente forma:
+
+DATABASES = {
+    'default':{
+        'ENGINE': os.getenv("DB_ENGINE"),
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
+        'OPTIONS': {
+          'charset' : 'utf8mb4',
+        }
+    }
+}
+
 # Abre la terminal (PowerShell) y ejecuta los siguientes comandos en este orden
 
 # 3. Crear entorno virtual
