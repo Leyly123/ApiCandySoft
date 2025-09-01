@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
-        image: mysql:8.0
+      postgres:
+        image: postgres:14
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: CandySoftApi2
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
         ports:
-          - 3307:3306
+          - 5432:5432
         options: >-
-          --health-cmd="mysqladmin ping -h localhost"
+          --health-cmd="pg_isready -U postgres"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
@@ -42,12 +43,7 @@ jobs:
         run: |
           echo "SECRET_KEY=django-insecure-ci-key" >> $GITHUB_ENV
           echo "DEBUG=False" >> $GITHUB_ENV
-          echo "DB_ENGINE=django.db.backends.mysql" >> $GITHUB_ENV
-          echo "DB_NAME=CandySoftApi2" >> $GITHUB_ENV
-          echo "DB_USER=root" >> $GITHUB_ENV
-          echo "DB_PASSWORD=root" >> $GITHUB_ENV
-          echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
-          echo "DB_PORT=3307" >> $GITHUB_ENV
+          echo "DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/test_db" >> $GITHUB_ENV
 
       - name: Run migrations
         run: python apiCandySoft/manage.py migrate
