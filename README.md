@@ -114,22 +114,24 @@ IMGBB_API_KEY = "fec1ba28d181c77a5801a0952fead016"
 
 # Actualmente, el bloque de código luce así:
 
-DATABASES = {
-    'default':{
-        'ENGINE': os.getenv("DB_ENGINE"),
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+db_url = os.getenv("DATABASE_URL")
+
+if db_url and "sslmode=disable" in db_url:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            db_url,
+            conn_max_age=600,
+            ssl_require=False
+        )
     }
-} 
-
-# A esta configuración se le debe agregar la sección OPTIONS para especificar el uso del conjunto de caracteres utf8mb4, que permite un manejo más completo de caracteres especiales y emojis en la base de datos.
-
-'OPTIONS': {
-    'charset' : 'utf8mb4',
-}
+else:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            db_url,
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
 
 # El bloque de configuración actualizado quedaría de la siguiente forma:
 
