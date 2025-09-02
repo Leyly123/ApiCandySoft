@@ -273,7 +273,7 @@ Ese enlace abre la pestaña **Actions** del repositorio, donde podrás ver:
 
 ---
 
-# Despliegue en IaaS (Trabajo implantación)
+# 🌐 Despliegue en IaaS (Trabajo implantación)
 
 API Rest desarrollada en **Django Rest Framework**, desplegada en **Render** y conectada a **Supabase (PostgreSQL)**.
 
